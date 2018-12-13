@@ -16,11 +16,9 @@ module.exports = (env) => {
     },
     module: { //run babel when it encounters js files
       rules: [{
-        loaders: [{ 
+        loader: 'babel-loader',
           test: /\.js$/,
           exclude: /node_modules/,
-          loader:'babel-loader'
-        }],
       }, {
         test: /\.s?css$/,
         use: CSSExtract.extract({

@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "src"
+		},
+		{
+			"path": "server"
+		},
+		{
+			"path": "public"
+		},
+		{
+			"path": "node_modules"
+		}
+	]
+}
