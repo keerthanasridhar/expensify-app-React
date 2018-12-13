@@ -7,7 +7,7 @@
   "scripts": {
     "serve": "live-server public/",
     "build:dev": "webpack",
-    "build:prod": "webpack  --env production",
+    "build:prod": "webpack  -p --env production",
     "dev-server": "webpack-dev-server",
     "start": "node server/sever.js",
     "heroku-postbuild": "npm run build:prod"
