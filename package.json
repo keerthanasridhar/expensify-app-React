@@ -7,7 +7,7 @@
   "scripts": {
     "serve": "live-server public/",
     "build:dev": "webpack",
-    "build:prod": "webpack -p --env production",
+    "build:prod": "webpack  --env production",
     "dev-server": "webpack-dev-server",
     "start": "node server/sever.js",
     "heroku-postbuild": "npm run build:prod"
@@ -37,9 +37,10 @@
     "validator": "^10.9.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.2.0",
     "@babel/plugin-proposal-class-properties": "^7.1.0",
     "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
-    "@babel/preset-env": "^7.1.5",
+    "@babel/preset-env": "^7.2.0",
     "css-loader": "^1.0.1",
     "node-sass": "^4.10.0",
     "sass-loader": "^7.1.0",
