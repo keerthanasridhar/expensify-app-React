@@ -1,11 +1,11 @@
 {
     "presets": [
-        "@babel/preset-env",
-        "@babel/preset-react"
+        "preset-env",
+        "preset-react"
     ],
     "plugins": [
-        "@babel/plugin-proposal-class-properties",
-        "@babel/plugin-proposal-object-rest-spread"
+        "plugin-proposal-class-properties",
+        "plugin-proposal-object-rest-spread"
     ]
 }
 
