@@ -9,7 +9,7 @@
     "build:dev": "webpack",
     "build:prod": "webpack  -p --env production",
     "dev-server": "webpack-dev-server",
-    "start": "node ../server/sever.js",
+    "start": "node /server/sever.js",
     "heroku-postbuild": "npm run build:prod"
   },
   "devDependencies": {
