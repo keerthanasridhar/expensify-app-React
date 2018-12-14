@@ -12,7 +12,7 @@
     "start": "node server/sever.js",
     "heroku-postbuild": "npm run build:prod"
   },
-  "dependencies": {
+  "devDependencies": {
     "express": "^4.16.4",
     "extract-text-webpack-plugin": "^3.0.2",
     "live-server": "^1.2.0",
