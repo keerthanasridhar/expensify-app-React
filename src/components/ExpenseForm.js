@@ -7,7 +7,7 @@ import 'react-dates/lib/css/_datepicker.css';
 
 // const now = moment().format('MMMM Do, YYYY');
 const now = moment()
-console.log(now);
+// console.log(now);
 
 
 export default class ExpenseForm extends React.Component {
