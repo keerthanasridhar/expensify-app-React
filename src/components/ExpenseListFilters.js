@@ -7,7 +7,6 @@ import { DateRangePicker} from 'react-dates';
 class ExpenseListFilters extends React.Component{
     state = {
         calendarfocused: null
-
     };
 
     onDatesChange=({startDate,endDate})=>{
@@ -17,6 +16,18 @@ class ExpenseListFilters extends React.Component{
     onFocusChange=(calendarfocused)=>{
      this.setState(()=>{ calendarfocused })
      }
+     onTextChange = (e)=>{
+        // debugger;
+    this.props.dispatch(setTextFilter(e.target.value))
+        
+    }
+      onSortChange = (e)=>{
+        if(e.target.value ==='date'){
+            this.props.dispatch(sortByDate());
+        } else if(e.target.value ==='amount'){
+            this.props.dispatch(sortByAmount());
+        }
+    }
     
     render() {
         return (
@@ -24,20 +35,10 @@ class ExpenseListFilters extends React.Component{
                 <input 
                 type = "text" 
                 value={this.props.filters.text} 
-                onChange ={(e)=>{
-                    // debugger;
-                this.props.dispatch(setTextFilter(e.target.value))
-                    
-                }}/>
+                onChange ={this.onTextChange}/>
                 <select 
                 value = {this.props.filters.sortBy}
-                onChange ={(e)=>{
-                    if(e.target.value ==='date'){
-                        this.props.dispatch(sortByDate());
-                    } else if(e.target.value ==='amount'){
-                        this.props.dispatch(sortByAmount());
-                    }
-                }} 
+                onChange ={this.onSortChange} 
                 >
                 <option value = "date">Date</option>
                 <option value = "amount">Amount</option>
