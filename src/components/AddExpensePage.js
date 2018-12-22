@@ -3,7 +3,7 @@ import ExpenseForm from '../components/ExpenseForm.js'
 import {connect} from 'react-redux';
 import { addExpense } from '../action/expenses';
 
-class AddExpensePage extends React.component {
+export class AddExpensePage extends React.Component {
     onSubmit = (expense)=>{
         this.props.addExpense(expense);
         this.props.history.push('/')
@@ -26,4 +26,4 @@ const mapDispatchToProps = (dispatch) => ({
     addExpense: (expense) => dispatch(addExpense(expense))
   });
 
-export default connect(undefined,mapDispatchToProps)(AddExpensePage);
+export default connect(undefined, mapDispatchToProps)(AddExpensePage);
