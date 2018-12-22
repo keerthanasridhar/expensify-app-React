@@ -43,24 +43,25 @@ class ExpenseListFilters extends React.Component{
                 <option value = "amount">Amount</option>
                 </select>
                 <DateRangePicker
-                // startDate={this.props.filters.startDate}
-                // startDateId="startDateid123" // momentPropTypes.momentObj or null,
-                // endDate={this.props.filters.endDate}
-                // endDateId="EndDateid123" // momentPropTypes.momentObj or null,
-                // onDatesChange={this.onDatesChange} // PropTypes.func.isRequired,
-                // focusedInput={this.state.calendarfocused} // PropTypes.oneOf([START_DATE, END_DATE]) or null,
-                // onFocusChange={this.onFocusChange}
-                // numberOfMonths = {1}
-                // isOutsideRange={()=> false }
-                // showClearDates = {true} // PropTypes.func.isRequired,//The cross or clear mark
                 startDate={this.props.filters.startDate}
+                startDateId="startDateid123" // momentPropTypes.momentObj or null,
                 endDate={this.props.filters.endDate}
-                onDatesChange={this.onDatesChange}
-                focusedInput={this.state.calendarFocused}
+                endDateId="EndDateid123" // momentPropTypes.momentObj or null,
+                onDatesChange={this.onDatesChange} // PropTypes.func.isRequired,
+                focusedInput={this.state.calendarfocused} // PropTypes.oneOf([START_DATE, END_DATE]) or null,
                 onFocusChange={this.onFocusChange}
-                showClearDates={true}
-                numberOfMonths={1}
-                isOutsideRange={() => false}
+                numberOfMonths = {1}
+                isOutsideRange={()=> false }
+                showClearDates = {true} // PropTypes.func.isRequired,//The cross or clear mark
+                
+                // startDate={this.props.filters.startDate}
+                // endDate={this.props.filters.endDate}
+                // onDatesChange={this.onDatesChange}
+                // focusedInput={this.state.calendarFocused}
+                // onFocusChange={this.onFocusChange}
+                // showClearDates={true}
+                // numberOfMonths={1}
+                // isOutsideRange={() => false}
                 />
             </div>
         );
@@ -73,5 +74,12 @@ const mapStateToProps = (state)=>{
         filters:state.filters
     }
 }
+const mapDispatchToProps = (dispatch) => ({
+    setTextFilter: (text) => dispatch(setTextFilter(text)),
+    sortByDate: () => dispatch(sortByDate()),
+    sortByAmount: () => dispatch(sortByAmount()),
+    setStartDate: (startDate) => dispatch(setStartDate(startDate)),
+    setEndDate: (endDate) => dispatch(setEndDate(endDate))
+  });
 
-export default connect(mapStateToProps)(ExpenseListFilters);
+export default connect(mapStateToProps,mapDispatchToProps)(ExpenseListFilters);
